@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { setOrigin, setDestination, getDistanceMatrix } from '../../store/actions'
-import MainForm from '../Main/mainForm'
+import MainForm from './mainForm'
+import DistanceData from './distanceData'
 
 class Main extends Component {
   handleSubmit = async evt => {
@@ -36,6 +37,12 @@ class Main extends Component {
             handleDestinationChange={this.handleDestinationChange}
           />
         </div>
+        {this.props.directions.distance 
+          ? <DistanceData 
+              distance={this.props.directions.distance.distance.text} 
+              duration={this.props.directions.distance.duration.text} 
+            />
+          : null}
       </div>
     )
   }
