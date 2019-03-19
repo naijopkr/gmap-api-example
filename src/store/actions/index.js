@@ -21,6 +21,10 @@ export const setDestination = place => dispatch => {
 }
 
 export const getDistanceMatrix = (origin, destination) => async dispatch => {
+  if (!origin || !destination) {
+    return false
+  }
+  
   const mapsURI = '/maps/api/distancematrix/json?origins='
       + origin
       + '&destinations=' + destination

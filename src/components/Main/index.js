@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import M from 'materialize-css'
 
 import { setOrigin, setDestination, getDistanceMatrix } from '../../store/actions'
 import MainForm from './mainForm'
@@ -8,9 +9,15 @@ import DistanceData from './distanceData'
 class Main extends Component {
   handleSubmit = async evt => {
     evt.preventDefault()
-    const { directions } = this.props
+    const { origin, destination } = this.props.directions
 
-    this.props.getDistanceMatrix(directions.origin.formatted_address, directions.destination.formatted_address)
+    if (!origin || !destination) {
+      return false
+    }
+
+    this.props.getDistanceMatrix(
+      origin.formatted_address || null, 
+      destination.formatted_address || null)
   }
 
   handleOriginChange = place => {

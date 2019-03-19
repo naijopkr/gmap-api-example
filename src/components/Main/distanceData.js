@@ -4,8 +4,8 @@ const distanceData = props => {
   const { distance, duration } = props
   return (
     <div>
-      <div>Distance: {distance}</div>
-      <div>Estimated duration: {duration}</div>
+      <div>Distance: {distance || 'N/A'}</div>
+      <div>Estimated duration: {duration || 'N/A'}</div>
     </div>
   )
 }
