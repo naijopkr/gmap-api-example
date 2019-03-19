@@ -1,4 +1,7 @@
 import * as types from './types'
+import M from 'materialize-css'
+
+import axios from 'axios'
 
 export const submitLogin = (username, password) => dispatch => {
   //Mock login
@@ -10,11 +13,24 @@ export const submitLogin = (username, password) => dispatch => {
 }
 
 export const setOrigin = place => dispatch => {
-  console.log(place)
   dispatch({ type: types.SET_ORIGIN, payload: place })
 }
 
 export const setDestination = place => dispatch => {
-  console.log(place)
   dispatch({ type: types.SET_DESTINATION, payload: place })
+}
+
+export const getDistanceMatrix = (origin, destination) => async dispatch => {
+  const mapsURI = '/maps/api/distancematrix/json?origins='
+      + origin
+      + '&destinations=' + destination
+      + '&key=AIzaSyBTxiIgCBJbcJSjawTEgsNYJhm1LPlR-r0'
+  
+  const res = await axios.get(mapsURI)
+  
+  if (res.data.status === 'OK') {
+    dispatch({ type: types.SET_DISTANCE, payload: res.data })
+  } else {
+    M.toast({ html: 'Something went wrong!' })
+  }
 }

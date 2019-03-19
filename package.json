@@ -2,6 +2,7 @@
   "name": "liftit",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://maps.googleapis.com",
   "dependencies": {
     "axios": "^0.18.0",
     "materialize-css": "^1.0.0",

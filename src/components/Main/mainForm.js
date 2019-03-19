@@ -1,5 +1,4 @@
 import React from 'react'
-import { reduxForm } from 'redux-form'
 import Autocomplete from 'react-google-autocomplete'
 
 const mainForm = props => {
@@ -27,8 +26,6 @@ const mainForm = props => {
           />
         </div>
       </div>
-      
-      
       <div className='center'>
         <button className='btn blue' type='submit'>Search</button>
       </div>
@@ -36,6 +33,4 @@ const mainForm = props => {
   )
 }
 
-export default reduxForm({
-  form: 'main'
-})(mainForm)
+export default mainForm

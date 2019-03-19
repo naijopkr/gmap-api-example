@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { setOrigin, setDestination } from '../../store/actions'
+import { setOrigin, setDestination, getDistanceMatrix } from '../../store/actions'
 import MainForm from '../Main/mainForm'
 
 class Main extends Component {
-  handleSubmit = evt => {
+  handleSubmit = async evt => {
     evt.preventDefault()
-    const { values } = this.props.form.main
-    console.log(values)
+    const { directions } = this.props
+
+    this.props.getDistanceMatrix(directions.origin.formatted_address, directions.destination.formatted_address)
   }
 
   handleOriginChange = place => {
@@ -42,10 +43,10 @@ class Main extends Component {
 
 const mapStateToProps = state => {
   return {
-    form: state.form
+    directions: state.directions
   }
 }
 
 export default connect(mapStateToProps, {
-  setOrigin, setDestination
+  setOrigin, setDestination, getDistanceMatrix
 })(Main)
