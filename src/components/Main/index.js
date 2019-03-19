@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import M from 'materialize-css'
 
 import { setOrigin, setDestination, getDistanceMatrix } from '../../store/actions'
 import MainForm from './mainForm'
