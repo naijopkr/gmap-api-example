@@ -1,7 +1,7 @@
 To run the project clone it:
 
-```git clone <clone address>```
-```cd liftit```
+```git clone https://github.com/naijopkr/liftit-test.git```
+```cd liftit-test```
 
 Install the dependecies:
 ```npm install```
