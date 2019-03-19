@@ -6,10 +6,12 @@ const loginForm = props => {
   return (
     <form className='col s6 offset-s3' onSubmit={handleSubmit}>
       <div className='input-field'>
-        <Field component='input' name='username' required />
+        <Field component='input' id='username' name='username' type='text' required />
+        <label htmlFor='username'>Username</label>
       </div>
       <div className='input-field'>
-        <Field component='input' name='password' type='password' required />
+        <Field component='input' id='password' name='password' type='password' required />
+        <label htmlFor='password'>Password</label>
       </div>
       <div className='center'>
         <button className='btn blue' type='submit'>Log in</button>
