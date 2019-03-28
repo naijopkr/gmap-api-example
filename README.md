@@ -7,6 +7,8 @@ To run the project clone it:
 Install the dependecies:
 ```npm install```
 
+Replace the API key on `/public/index.html` and `/src/store/actions/index.js` for a valid one.
+
 Start de development server:
 ```npm start```
 
