@@ -6,8 +6,6 @@ import axios from 'axios'
 export const submitLogin = (username, password) => dispatch => {
   //Mock login
   let isAuthorized = (username === 'admin' && password === 'admin')
-    ? true
-    : false
 
   dispatch({ type: types.LOGIN, payload: isAuthorized })
 }
