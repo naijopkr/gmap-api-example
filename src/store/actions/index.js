@@ -28,7 +28,7 @@ export const getDistanceMatrix = (origin, destination) => async dispatch => {
   const mapsURI = '/maps/api/distancematrix/json?origins='
       + origin
       + '&destinations=' + destination
-      + '&key=AIzaSyBTxiIgCBJbcJSjawTEgsNYJhm1LPlR-r0'
+      + '&key=' + PROCESS.ENV.GOOGLE_API_KEY
   
   const res = await axios.get(mapsURI)
   
