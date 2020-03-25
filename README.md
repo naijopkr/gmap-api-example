@@ -1,8 +1,8 @@
 To run the project clone it:
 
-```git clone https://github.com/naijopkr/liftit-test.git```
+```git clone https://github.com/naijopkr/gmap-api-example.git```
 
-```cd liftit-test```
+```cd gmap-api-example```
 
 Install the dependecies:
 ```npm install```
