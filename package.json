@@ -1,5 +1,5 @@
 {
-  "name": "liftit",
+  "name": "gmaps-sample",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://maps.googleapis.com",
